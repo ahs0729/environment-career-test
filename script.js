@@ -27,9 +27,14 @@ let counts = {
 
 function startTest() {
 
-  document.querySelector(".container").innerHTML = `
-    <h3 id="progress"></h3>
-    <h2 id="question-number"></h2>
+document.querySelector(".container").innerHTML = `
+
+<div class="progress-bar">
+  <div class="progress-fill" id="progress-fill"></div>
+</div>
+
+<h3 id="progress"></h3>
+<h2 id="question-number"></h2>
     <p id="question-text"></p>
 
     <div id="buttons">
@@ -60,6 +65,14 @@ function showQuestion() {
   document.getElementById("progress").innerText =
     `${currentQuestion + 1} / ${questions.length}`;
 
+const percent =
+((currentQuestion + 1) / questions.length) * 100;
+
+document.getElementById("progress-fill").style.width =
+`${percent}%`;
+
+document.getElementById("progress-fill").style.width =
+`${percent}%`;
   document.getElementById("question-number").innerText =
     `Q${questions[currentQuestion].id}`;
 
@@ -100,7 +113,8 @@ function calculateResult() {
 
   let first = sorted[0];
   let second = sorted[1];
-
+  let third = sorted[2];
+  
   let resultText = "";
 
   if ((first[1] - second[1]) < 0.5) {
@@ -122,8 +136,8 @@ let data = resultData[mainType];
 
 document.querySelector(".container").innerHTML = `
 
-<h1>${data.title}</h1>
-
+<h1>${resultText}</h1>
+<h2>${resultText}</h2>
 <p>${data.description}</p>
 
 <hr>
@@ -150,14 +164,21 @@ ${data.licenses.map(item => `<li>${item}</li>`).join("")}
 
 <hr>
 
+<h3>🏆 나의 상위 유형</h3>
+
 <p>
-1위 : ${getTypeName(first[0])}
+🥇 ${getTypeName(first[0])}
 (${first[1].toFixed(2)})
 </p>
 
 <p>
-2위 : ${getTypeName(second[0])}
+🥈 ${getTypeName(second[0])}
 (${second[1].toFixed(2)})
+</p>
+
+<p>
+🥉 ${getTypeName(third[0])}
+(${third[1].toFixed(2)})
 </p>
 
 <button onclick="showScores()">
