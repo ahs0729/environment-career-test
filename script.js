@@ -64,12 +64,11 @@ document.querySelector(".container").innerHTML = `
 
 <div class="likert-guide">
 
-  <span>① 전혀 그렇지 않다</span>
-  <span>② 그렇지 않다</span>
-  <span>③ 보통이다</span>
-  <span>④ 그렇다</span>
-  <span>⑤ 매우 그렇다</span>
-
+ ① 전혀 그렇지 않다 ·
+ ② 그렇지 않다 ·
+ ③ 보통이다 ·
+ ④ 그렇다 ·
+ ⑤ 매우 그렇다
 </div>
   `;
 
