@@ -109,25 +109,58 @@ function calculateResult() {
       getTypeName(first[0]);
   }
 
-  document.querySelector(".container").innerHTML = `
-    <h1>검사 완료!</h1>
+  let mainType = first[0];
+let data = resultData[mainType];
 
-    <h2>${resultText}</h2>
+document.querySelector(".container").innerHTML = `
 
-    <p>
-      1위 : ${getTypeName(first[0])}
-      (${first[1].toFixed(2)})
-    </p>
+<h1>${data.title}</h1>
 
-    <p>
-      2위 : ${getTypeName(second[0])}
-      (${second[1].toFixed(2)})
-    </p>
+<p>${data.description}</p>
 
-    <button onclick="location.reload()">
-      다시 검사하기
-    </button>
-  `;
+<hr>
+
+<h3>💼 추천 직무</h3>
+<ul>
+${data.jobs.map(item => `<li>${item}</li>`).join("")}
+</ul>
+
+<h3>🏢 추천 공기업·공공기관</h3>
+<ul>
+${data.publics.map(item => `<li>${item}</li>`).join("")}
+</ul>
+
+<h3>🏭 추천 사기업</h3>
+<ul>
+${data.companies.map(item => `<li>${item}</li>`).join("")}
+</ul>
+
+<h3>📜 추천 자격증</h3>
+<ul>
+${data.licenses.map(item => `<li>${item}</li>`).join("")}
+</ul>
+
+<hr>
+
+<p>
+1위 : ${getTypeName(first[0])}
+(${first[1].toFixed(2)})
+</p>
+
+<p>
+2위 : ${getTypeName(second[0])}
+(${second[1].toFixed(2)})
+</p>
+
+<button onclick="showScores()">
+📊 내 점수 보기
+</button>
+
+<button onclick="location.reload()">
+🔄 다시 검사하기
+</button>
+
+`;
 }
 
 function getTypeName(type) {
@@ -144,4 +177,35 @@ function getTypeName(type) {
   };
 
   return names[type];
+}
+
+function showScores() {
+
+  let html = "<h2>📊 유형별 점수</h2>";
+
+  let averages = {};
+
+  for(let type in scores){
+    averages[type] =
+      (scores[type] / counts[type]).toFixed(2);
+  }
+
+  for(let type in averages){
+
+    html += `
+      <p>
+      ${getTypeName(type)}
+      : ${averages[type]}
+      </p>
+    `;
+  }
+
+  html += `
+    <br>
+    <button onclick="location.reload()">
+      🔄 다시 검사하기
+    </button>
+  `;
+
+  document.querySelector(".container").innerHTML = html;
 }
