@@ -53,6 +53,8 @@ document.querySelector(".container").innerHTML = `
 
 <p id="question-text"></p>
 
+<div class="answer-area">
+
 <div id="buttons">
 
   <button onclick="answerQuestion(1)">1</button>
