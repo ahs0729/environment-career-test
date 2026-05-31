@@ -37,7 +37,9 @@ document.querySelector(".container").innerHTML = `
 
 <div class="top-bar">
 
-<h3 id="progress"></h3>
+  <h3 id="progress"></h3>
+
+</div>
 
 <div class="question-header">
 
@@ -52,7 +54,6 @@ document.querySelector(".container").innerHTML = `
 <p id="question-text"></p>
 
 <div id="buttons">
-<div id="buttons">
 
   <button onclick="answerQuestion(1)">1</button>
   <button onclick="answerQuestion(2)">2</button>
@@ -63,12 +64,11 @@ document.querySelector(".container").innerHTML = `
 </div>
 
 <div class="likert-guide">
-
- ① 전혀 그렇지 않다 ·
- ② 그렇지 않다 ·
- ③ 보통이다 ·
- ④ 그렇다 ·
- ⑤ 매우 그렇다
+  ① 전혀 그렇지 않다 ·
+  ② 그렇지 않다 ·
+  ③ 보통이다 ·
+  ④ 그렇다 ·
+  ⑤ 매우 그렇다
 </div>
   `;
 
