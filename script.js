@@ -95,11 +95,14 @@ answers.push(value);
 
   currentQuestion++;
 
-  if (currentQuestion < questions.length) {
-    showQuestion();
-  } else {
-    calculateResult();
-  }
+if (currentQuestion < questions.length) {
+
+  showQuestion();
+
+} else {
+
+  showLoading();
+
 }
 
 function calculateResult() {
@@ -277,4 +280,28 @@ function showResult() {
 
   document.querySelector(".container").innerHTML =
     resultHTML;
+}
+
+function showLoading() {
+
+  document.querySelector(".container").innerHTML = `
+
+    <h1>🔍 결과 분석 중...</h1>
+
+    <p>
+      나에게 가장 적합한 환경공학 분야를 찾고 있습니다.
+    </p>
+
+    <p>
+      잠시만 기다려 주세요.
+    </p>
+
+  `;
+
+  setTimeout(() => {
+
+    calculateResult();
+
+  }, 2000);
+
 }
