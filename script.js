@@ -234,7 +234,6 @@ function goBack() {
 }
 
 function showScores() {
-function showScores() {
 
   let averages = {};
 
