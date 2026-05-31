@@ -39,11 +39,15 @@ document.querySelector(".container").innerHTML = `
 <h2 id="question-number"></h2>
     <p id="question-text"></p>
 
-    <div id="buttons">
+<div class="back-area">
 
-  <button onclick="goBack()">
-    ← 이전
+  <button class="back-btn" onclick="goBack()">
+    ← 이전 문항
   </button>
+
+</div>
+
+<div id="buttons">
 
   <button onclick="answerQuestion(1)">1</button>
   <button onclick="answerQuestion(2)">2</button>
