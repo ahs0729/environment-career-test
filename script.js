@@ -42,7 +42,7 @@ document.querySelector(".container").innerHTML = `
 <div class="back-area">
 
   <button class="back-btn" onclick="goBack()">
-    ← 이전 문항
+    ← 이전
   </button>
 
 </div>
