@@ -41,11 +41,17 @@ document.querySelector(".container").innerHTML = `
     ← 이전
   </button>
 
-  <h3 id="progress"></h3>
+<h3 id="progress"></h3>
+
+<div class="question-header">
+
+  <button class="back-btn" onclick="goBack()">
+    ←
+  </button>
+
+  <h2 id="question-number"></h2>
 
 </div>
-
-<h2 id="question-number"></h2>
 
 <p id="question-text"></p>
 
