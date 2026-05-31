@@ -33,12 +33,18 @@ function startTest() {
     <p id="question-text"></p>
 
     <div id="buttons">
-      <button onclick="answerQuestion(1)">1</button>
-      <button onclick="answerQuestion(2)">2</button>
-      <button onclick="answerQuestion(3)">3</button>
-      <button onclick="answerQuestion(4)">4</button>
-      <button onclick="answerQuestion(5)">5</button>
-    </div>
+
+  <button onclick="goBack()">
+    ← 이전
+  </button>
+
+  <button onclick="answerQuestion(1)">1</button>
+  <button onclick="answerQuestion(2)">2</button>
+  <button onclick="answerQuestion(3)">3</button>
+  <button onclick="answerQuestion(4)">4</button>
+  <button onclick="answerQuestion(5)">5</button>
+
+</div>
 
     <p>
       1 = 전혀 그렇지 않다<br>
@@ -63,6 +69,8 @@ function showQuestion() {
 
 function answerQuestion(value) {
 
+answers.push(value);
+  
   const q = questions[currentQuestion];
 
   q.types.forEach(type => {
@@ -177,6 +185,29 @@ function getTypeName(type) {
   };
 
   return names[type];
+}
+
+function goBack() {
+
+  if (currentQuestion === 0) {
+    return;
+  }
+
+  currentQuestion--;
+
+  let previousAnswer = answers.pop();
+
+  const q = questions[currentQuestion];
+
+  q.types.forEach(type => {
+
+    scores[type] -= previousAnswer * q.weight;
+
+    counts[type] -= 1;
+
+  });
+
+  showQuestion();
 }
 
 function showScores() {
