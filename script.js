@@ -52,6 +52,7 @@ document.querySelector(".container").innerHTML = `
 <p id="question-text"></p>
 
 <div id="buttons">
+<div id="buttons">
 
   <button onclick="answerQuestion(1)">1</button>
   <button onclick="answerQuestion(2)">2</button>
@@ -61,10 +62,15 @@ document.querySelector(".container").innerHTML = `
 
 </div>
 
-    <p>
-      1 = 전혀 그렇지 않다<br>
-      5 = 매우 그렇다
-    </p>
+<div class="likert-guide">
+
+  <span>① 전혀 그렇지 않다</span>
+  <span>② 그렇지 않다</span>
+  <span>③ 보통이다</span>
+  <span>④ 그렇다</span>
+  <span>⑤ 매우 그렇다</span>
+
+</div>
   `;
 
   showQuestion();
