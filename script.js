@@ -35,17 +35,19 @@ document.querySelector(".container").innerHTML = `
   <div class="progress-fill" id="progress-fill"></div>
 </div>
 
-<h3 id="progress"></h3>
-<h2 id="question-number"></h2>
-    <p id="question-text"></p>
-
-<div class="back-area">
+<div class="top-bar">
 
   <button class="back-btn" onclick="goBack()">
     ← 이전
   </button>
 
+  <h3 id="progress"></h3>
+
 </div>
+
+<h2 id="question-number"></h2>
+
+<p id="question-text"></p>
 
 <div id="buttons">
 
