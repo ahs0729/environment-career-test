@@ -1,6 +1,8 @@
 let currentQuestion = 0;
 let answers = [];
 
+let resultHTML = "";
+
 // 유형 점수 저장
 let scores = {
   water: 0,
@@ -134,8 +136,7 @@ function calculateResult() {
   let mainType = first[0];
 let data = resultData[mainType];
 
-document.querySelector(".container").innerHTML = `
-
+resultHTML = `
 <h1>${resultText}</h1>
 <p>${data.description}</p>
 
@@ -189,6 +190,8 @@ ${data.licenses.map(item => `<li>${item}</li>`).join("")}
 </button>
 
 `;
+  document.querySelector(".container").innerHTML =
+resultHTML;
 }
 
 function getTypeName(type) {
@@ -231,8 +234,7 @@ function goBack() {
 }
 
 function showScores() {
-
-  let html = "<h2>📊 유형별 점수</h2>";
+function showScores() {
 
   let averages = {};
 
@@ -241,22 +243,39 @@ function showScores() {
       (scores[type] / counts[type]).toFixed(2);
   }
 
-  for(let type in averages){
+  // 점수 높은 순 정렬
+  let sorted = Object.entries(averages)
+    .sort((a, b) => b[1] - a[1]);
+
+  let html = "<h2>📊 유형별 점수</h2>";
+
+  sorted.forEach(item => {
 
     html += `
       <p>
-      ${getTypeName(type)}
-      : ${averages[type]}
+      ${getTypeName(item[0])}
+      : ${item[1]}
       </p>
     `;
-  }
+  });
 
   html += `
     <br>
+
+    <button onclick="showResult()">
+      ⬅ 결과 화면으로 돌아가기
+    </button>
+
     <button onclick="location.reload()">
       🔄 다시 검사하기
     </button>
   `;
 
   document.querySelector(".container").innerHTML = html;
+}
+
+function showResult() {
+
+  document.querySelector(".container").innerHTML =
+    resultHTML;
 }
