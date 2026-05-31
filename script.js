@@ -102,9 +102,9 @@ if (currentQuestion < questions.length) {
 } else {
 
   showLoading();
-
 }
-
+  
+}
 function calculateResult() {
 
   let averages = {};
