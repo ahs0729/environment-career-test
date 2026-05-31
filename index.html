@@ -55,18 +55,25 @@
         }
 
 .question-header{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
+    position:relative;
+    height:50px;
     margin-bottom:10px;
 }
 
 .question-header h2{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
     margin:0;
+    line-height:50px;
 }
 
 .back-btn{
+    position:absolute;
+    left:0;
+    top:50%;
+    transform:translateY(-50%);
+
     background:transparent;
     color:#2c7a7b;
     border:1px solid #2c7a7b;
