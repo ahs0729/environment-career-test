@@ -137,7 +137,6 @@ let data = resultData[mainType];
 document.querySelector(".container").innerHTML = `
 
 <h1>${resultText}</h1>
-<h2>${resultText}</h2>
 <p>${data.description}</p>
 
 <hr>
