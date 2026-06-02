@@ -172,7 +172,6 @@ resultText =
 }
 
 let data;
-let careerData;
 
 if ((first[1] - second[1]) < 0.5) {
 
@@ -190,13 +189,9 @@ if ((first[1] - second[1]) < 0.5) {
     data = resultData[first[0]];
   }
 
-  // 직무 정보는 1위 유형 사용
-  careerData = resultData[first[0]];
-
 } else {
 
   data = resultData[first[0]];
-  careerData = resultData[first[0]];
 
 }
 
@@ -208,22 +203,22 @@ resultHTML = `
 
 <h3>💼 추천 직무</h3>
 <ul>
-${careerData.jobs.map(item => `<li>${item}</li>`).join("")}
+${data.jobs.map(item => `<li>${item}</li>`).join("")}
 </ul>
 
 <h3>🏢 추천 공기업·공공기관</h3>
 <ul>
-${careerData.publics.map(item => `<li>${item}</li>`).join("")}
+${data.publics.map(item => `<li>${item}</li>`).join("")}
 </ul>
 
 <h3>🏭 추천 사기업</h3>
 <ul>
-${careerData.companies.map(item => `<li>${item}</li>`).join("")}
+${data.companies.map(item => `<li>${item}</li>`).join("")}
 </ul>
 
 <h3>📜 추천 자격증</h3>
 <ul>
-${careerData.licenses.map(item => `<li>${item}</li>`).join("")}
+${data.licenses.map(item => `<li>${item}</li>`).join("")}
 </ul>
 
 <hr>
