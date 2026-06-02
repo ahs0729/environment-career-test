@@ -161,9 +161,9 @@ if ((first[1] - second[1]) < 0.5) {
     ecology:"생태보전"
   };
 
-  resultText =
-    `${emojis[first[0]]}${emojis[second[0]]} ` +
-    `${names[first[0]]}·${names[second[0]]} 융합형`;
+resultText =
+  `${emojis[first[0]]} ${names[first[0]]} · ` +
+  `${emojis[second[0]]} ${names[second[0]]} 융합형`;
 
 } else {
 
