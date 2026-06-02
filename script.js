@@ -66,11 +66,8 @@ document.querySelector(".container").innerHTML = `
 </div>
 
 <div class="likert-guide">
-  ① 전혀 그렇지 않다 ·
-  ② 그렇지 않다 ·
-  ③ 보통이다 ·
-  ④ 그렇다 ·
-  ⑤ 매우 그렇다
+  ① 전혀 그렇지 않다 · ② 그렇지 않다 · ③ 보통이다<br>
+  ④ 그렇다 · ⑤ 매우 그렇다
 </div>
   `;
 
