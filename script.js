@@ -241,13 +241,13 @@ ${data.licenses.map(item => `<li>${item}</li>`).join("")}
 </p>
 
 <div style="margin-top:20px;">
-  <button onclick="showScores()">
-    📊 내 점수 보기
-  </button>
+<button class="result-btn" onclick="showScores()">
+📊 내 점수 보기
+</button>
 
-  <button onclick="location.reload()">
-    🔄 다시 검사하기
-  </button>
+<button class="result-btn" onclick="location.reload()">
+🔄 다시 검사하기
+</button>
 </div>
 
 `;
@@ -323,13 +323,13 @@ function showScores() {
     <br>
 
 <div style="margin-top:20px;">
-  <button onclick="showResult()">
-    ⬅ 결과 화면으로 돌아가기
-  </button>
+<button class="result-btn" onclick="showResult()">
+⬅ 결과 화면으로 돌아가기
+</button>
 
-  <button onclick="location.reload()">
-    🔄 다시 검사하기
-  </button>
+<button class="result-btn" onclick="location.reload()">
+🔄 다시 검사하기
+</button>
 </div>
   `;
 
