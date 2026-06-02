@@ -151,8 +151,20 @@ function calculateResult() {
       getTypeName(first[0]);
   }
 
-  let mainType = first[0];
-let data = resultData[mainType];
+let data;
+
+if ((first[1] - second[1]) < 0.5) {
+
+  const fusionKey =
+    first[0] + "-" + second[0];
+
+  data = fusionData[fusionKey];
+
+} else {
+
+  data = resultData[first[0]];
+
+}
 
 resultHTML = `
 <h1>${resultText}</h1>
