@@ -240,13 +240,15 @@ ${data.licenses.map(item => `<li>${item}</li>`).join("")}
 (${third[1].toFixed(2)})
 </p>
 
-<button onclick="showScores()">
-📊 내 점수 보기
-</button>
+<div style="margin-top:20px;">
+  <button onclick="showScores()">
+    📊 내 점수 보기
+  </button>
 
-<button onclick="location.reload()">
-🔄 다시 검사하기
-</button>
+  <button onclick="location.reload()">
+    🔄 다시 검사하기
+  </button>
+</div>
 
 `;
   document.querySelector(".container").innerHTML =
@@ -320,13 +322,15 @@ function showScores() {
   html += `
     <br>
 
-    <button onclick="showResult()">
-      ⬅ 결과 화면으로 돌아가기
-    </button>
+<div style="margin-top:20px;">
+  <button onclick="showResult()">
+    ⬅ 결과 화면으로 돌아가기
+  </button>
 
-    <button onclick="location.reload()">
-      🔄 다시 검사하기
-    </button>
+  <button onclick="location.reload()">
+    🔄 다시 검사하기
+  </button>
+</div>
   `;
 
   document.querySelector(".container").innerHTML = html;
