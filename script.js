@@ -135,21 +135,41 @@ function calculateResult() {
   let second = sorted[1];
   let third = sorted[2];
   
-  let resultText = "";
+let resultText = "";
 
-  if ((first[1] - second[1]) < 0.5) {
+if ((first[1] - second[1]) < 0.5) {
 
-    resultText =
-      getTypeName(first[0]) +
-      " - " +
-      getTypeName(second[0]) +
-      " 융합형";
+  const emojis = {
+    water:"💧",
+    air:"🌫️",
+    recycle:"♻️",
+    esg:"🌎",
+    data:"🤖",
+    energy:"⚡",
+    safety:"🧪",
+    ecology:"🌱"
+  };
 
-  } else {
+  const names = {
+    water:"수질",
+    air:"대기",
+    recycle:"자원순환",
+    esg:"ESG",
+    data:"데이터AI",
+    energy:"신재생에너지",
+    safety:"환경보건안전",
+    ecology:"생태보전"
+  };
 
-    resultText =
-      getTypeName(first[0]);
-  }
+  resultText =
+    `${emojis[first[0]]}${emojis[second[0]]} ` +
+    `${names[first[0]]}·${names[second[0]]} 융합형`;
+
+} else {
+
+  resultText = getTypeName(first[0]);
+
+}
 
 let data;
 let careerData;
