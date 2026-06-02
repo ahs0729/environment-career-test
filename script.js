@@ -155,11 +155,20 @@ let data;
 
 if ((first[1] - second[1]) < 0.5) {
 
-  const fusionKey =
-    first[0] + "-" + second[0];
+const fusionKey1 =
+  first[0] + "-" + second[0];
 
-  data = fusionData[fusionKey];
+const fusionKey2 =
+  second[0] + "-" + first[0];
 
+data =
+  fusionData[fusionKey1] ||
+  fusionData[fusionKey2];
+
+if (!data) {
+  data = resultData[first[0]];
+}
+  
 } else {
 
   data = resultData[first[0]];
