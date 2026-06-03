@@ -303,8 +303,6 @@ Number(
   }
 
   // 점수 높은 순 정렬
-  let sorted = Object.entries(averages)
-    .sort((a, b) => b[1] - a[1]);
 
 let html = `
 <h2>📊 유형별 점수</h2>
@@ -354,8 +352,7 @@ averages.ecology
 ];
 
 new Chart(
-document.getElementById("scoreChart");
-
+document.getElementById("scoreChart"),
 {
 type: "radar",
 
@@ -401,6 +398,8 @@ stepSize: 1
 }
 }
 });
+
+}
 
 function showResult() {
 
