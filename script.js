@@ -309,7 +309,9 @@ Number(
 let html = `
 <h2>📊 유형별 점수</h2>
 
-<canvas id="scoreChart"></canvas>
+<div style="max-width:700px; margin:auto;">
+  <canvas id="scoreChart"></canvas>
+</div>
 
 `;
 
