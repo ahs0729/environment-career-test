@@ -311,15 +311,6 @@ let html = `
 
 <canvas id="scoreChart"></canvas>
 
-<br>
-
-<button onclick="showResult()">
-⬅ 결과 화면으로 돌아가기
-</button>
-
-<button onclick="location.reload()">
-🔄 다시 검사하기
-</button>
 `;
 
   html += `
@@ -337,9 +328,8 @@ let html = `
   `;
 
   document.querySelector(".container").innerHTML = html;
-}
 
-const labels = [
+  const labels = [
 "수질",
 "대기",
 "자원순환",
@@ -362,7 +352,8 @@ averages.ecology
 ];
 
 new Chart(
-document.getElementById("scoreChart"),
+document.getElementById("scoreChart");
+
 {
 type: "radar",
 
