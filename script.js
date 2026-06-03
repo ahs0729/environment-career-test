@@ -383,16 +383,6 @@ options: {
 
 responsive: true,
 
-plugins: {
-legend: {
-labels: {
-font: {
-size: 16
-}
-}
-}
-},
-
 scales: {
 
 r: {
@@ -400,17 +390,8 @@ r: {
 min: 1,
 max: 5,
 
-pointLabels: {
-font: {
-size: 15
-}
-},
-
 ticks: {
-stepSize: 1,
-font: {
-size: 13
-}
+stepSize: 1
 }
 }
 }
