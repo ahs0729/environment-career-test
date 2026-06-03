@@ -329,15 +329,15 @@ let html = `
 
   document.querySelector(".container").innerHTML = html;
 
-  const labels = [
-"수질",
-"대기",
-"자원순환",
-"ESG",
-"데이터AI",
-"에너지",
-"보건안전",
-"생태"
+const labels = [
+`수질 (${averages.water})`,
+`대기 (${averages.air})`,
+`자원순환 (${averages.recycle})`,
+`ESG (${averages.esg})`,
+`데이터AI (${averages.data})`,
+`에너지 (${averages.energy})`,
+`보건안전 (${averages.safety})`,
+`생태 (${averages.ecology})`
 ];
 
 const dataValues = [
