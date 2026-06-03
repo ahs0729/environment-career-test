@@ -296,25 +296,31 @@ function showScores() {
   let averages = {};
 
   for(let type in scores){
-    averages[type] =
-      (scores[type] / counts[type]).toFixed(2);
+averages[type] =
+Number(
+(scores[type] / counts[type]).toFixed(2)
+);
   }
 
   // 점수 높은 순 정렬
   let sorted = Object.entries(averages)
     .sort((a, b) => b[1] - a[1]);
 
-  let html = "<h2>📊 유형별 점수</h2>";
+let html = `
+<h2>📊 유형별 점수</h2>
 
-  sorted.forEach(item => {
+<canvas id="scoreChart"></canvas>
 
-    html += `
-      <p>
-      ${getTypeName(item[0])}
-      : ${item[1]}
-      </p>
-    `;
-  });
+<br>
+
+<button onclick="showResult()">
+⬅ 결과 화면으로 돌아가기
+</button>
+
+<button onclick="location.reload()">
+🔄 다시 검사하기
+</button>
+`;
 
   html += `
     <br>
@@ -332,6 +338,76 @@ function showScores() {
 
   document.querySelector(".container").innerHTML = html;
 }
+
+const labels = [
+"수질",
+"대기",
+"자원순환",
+"ESG",
+"데이터AI",
+"에너지",
+"보건안전",
+"생태"
+];
+
+const dataValues = [
+averages.water,
+averages.air,
+averages.recycle,
+averages.esg,
+averages.data,
+averages.energy,
+averages.safety,
+averages.ecology
+];
+
+new Chart(
+document.getElementById("scoreChart"),
+{
+type: "radar",
+
+data: {
+labels: labels,
+
+datasets: [{
+label: "적성 점수",
+
+data: dataValues,
+
+fill: true,
+
+backgroundColor:
+"rgba(44,122,123,0.2)",
+
+borderColor:
+"#2c7a7b",
+
+pointBackgroundColor:
+"#2c7a7b",
+
+borderWidth: 3
+}]
+},
+
+options: {
+
+responsive: true,
+
+scales: {
+
+r: {
+
+min: 1,
+
+max: 5,
+
+ticks: {
+stepSize: 1
+}
+}
+}
+}
+});
 
 function showResult() {
 
