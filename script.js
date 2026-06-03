@@ -307,7 +307,7 @@ Number(
 let html = `
 <h2>📊 유형별 점수</h2>
 
-<div style="max-width:700px; margin:auto;">
+<div style="max-width:850px; margin:auto;">
   <canvas id="scoreChart"></canvas>
 </div>
 
@@ -383,16 +383,34 @@ options: {
 
 responsive: true,
 
+plugins: {
+legend: {
+labels: {
+font: {
+size: 16
+}
+}
+}
+},
+
 scales: {
 
 r: {
 
 min: 1,
-
 max: 5,
 
+pointLabels: {
+font: {
+size: 15
+}
+},
+
 ticks: {
-stepSize: 1
+stepSize: 1,
+font: {
+size: 13
+}
 }
 }
 }
